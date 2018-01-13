@@ -2,9 +2,11 @@
 
 An alternative string format library for pony.
 
-Intended to be a more convenient replacement for simple string
-concatenation where complex number formatting or alignment is not
-required than the builtin `format` library.
+Intended to be a convenient tool for doing simple string formatting in
+the style of `printf`/`sprintf` rather than concatenating strings
+together using `+` or `String.append`. Right now, there is no support
+for more complex formatting rules, so for any kind of more involved
+formatting I recommend using the builtin `format` library.
 
 Note that the code currently doesn't check that the number of
 values passed in actually match the number of formatting marks in the
