@@ -7,7 +7,11 @@ class Fmt
   new create(fmt: String box) =>
     _fmt = fmt
 
-  fun ref apply(arg: Stringable): Fmt =>
+  fun ref apply(arg: Stringable box): Fmt =>
+    _args.push(arg.string())
+    this
+
+  fun ref a[A: Stringable #read](arg: A): Fmt =>
     _args.push(arg.string())
     this
 

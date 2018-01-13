@@ -20,13 +20,13 @@ class iso _TestLiterals is UnitTest
 
   fun apply(h: TestHelper) =>
     h.assert_eq[String]("10",
-      Fmt("%")(ISize(10)).string())
+      Fmt("%").a[ISize](10).string())
 
     h.assert_eq[String]("-10",
-      Fmt("%")(ISize(-10)).string())
+      Fmt("%").a[ISize](-10).string())
 
     h.assert_eq[String]("1.1",
-      Fmt("%")(F32(1.1)).string())
+      Fmt("%").a[F32](1.1).string())
 
 class iso _TestEscape is UnitTest
   fun name(): String => "fmt/escape"

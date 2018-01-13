@@ -28,10 +28,12 @@ actor Main
 ## Formatting literals
 
 Literal numbers are ambiguous types and can't be passed directly to
-the `Fmt.apply` method. Therefore, they need to be typed:
+the `Fmt.apply` method. Therefore, they need to be typed. This can
+either be done by explicitly casting them as so: `F32(2.4)`, or by
+using the `a` method:
 
 ``` pony
-Fmt("Formatting %, a number")(F32(2.4)).string()
+Fmt("Formatting %, a number").a[F32](2.4).string()
 ```
 
 ## Escaping percent characters
