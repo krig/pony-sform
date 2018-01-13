@@ -8,13 +8,17 @@ together using `+` or `String.append`. Right now, there is no support
 for more complex formatting rules, so for any kind of more involved
 formatting I recommend using the builtin `format` library.
 
+## Status
+
+[![CircleCI](https://circleci.com/gh/krig/pony-fmt.svg?style=svg)](https://circleci.com/gh/krig/pony-fmt)
+
 Note that the code currently doesn't check that the number of
 values passed in actually match the number of formatting marks in the
 string: Too few, and there will be `%` markers left in the printed
 string. Too many, and only as many as needed by the format string are
 used.
 
-Usage example:
+## Usage
 
 ``` pony
 
@@ -27,7 +31,7 @@ actor Main
 
 ```
 
-## Formatting literals
+### Formatting literals
 
 Literal numbers are ambiguous types and can't be passed directly to
 the `Fmt.apply` method. Therefore, they need to be typed. This can
@@ -38,19 +42,13 @@ using the `a` method:
 Fmt("Formatting %, a number").a[F32](2.4).string()
 ```
 
-## Escaping percent characters
+### Escaping percent characters
 
 To print a `%` character, double it up:
 
 ```
 Fmt("The first %% is ignored, the second %")("is replaced").string()
 ```
-
-## Status
-
-[![CircleCI](https://circleci.com/gh/krig/pony-fmt.svg?style=svg)](https://circleci.com/gh/krig/pony-fmt)
-
-{PROJECT_STATUS}
 
 ## Installation
 
