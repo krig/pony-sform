@@ -1,4 +1,4 @@
-# fmt
+# pony-fmt
 
 An alternative string format library for pony.
 
@@ -45,3 +45,25 @@ To print a `%` character, double it up:
 ```
 Fmt("The first %% is ignored, the second %")("is replaced").string()
 ```
+
+## Status
+
+[![CircleCI](https://circleci.com/gh/krig/pony-fmt.svg?style=svg)](https://circleci.com/gh/krig/pony-fmt)
+
+{PROJECT_STATUS}
+
+## Installation
+
+* Install [pony-stable](https://github.com/ponylang/pony-stable)
+* Update your `bundle.json`
+
+```json
+{ 
+  "type": "github",
+  "repo": "krig/pony-fmt"
+}
+```
+
+* `stable fetch` to fetch your dependencies
+* `use "fmt"` to include this package
+* `stable env ponyc` to compile your application
