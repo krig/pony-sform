@@ -9,29 +9,29 @@ actor Main is TestList
     test(_TestEscape)
 
 class iso _TestBasic is UnitTest
-  fun name(): String => "fmt/basic"
+  fun name(): String => "sform/basic"
 
   fun apply(h: TestHelper) =>
     h.assert_eq[String]("connect to localhost:80 and enjoy",
-      Fmt("connect to %:% and enjoy")("localhost")("80").string())
+      Sform("connect to %:% and enjoy")("localhost")("80").string())
 
 class iso _TestLiterals is UnitTest
-  fun name(): String => "fmt/literals"
+  fun name(): String => "sform/literals"
 
   fun apply(h: TestHelper) =>
     h.assert_eq[String]("10",
-      Fmt("%").a[ISize](10).string())
+      Sform("%").a[ISize](10).string())
 
     h.assert_eq[String]("-10",
-      Fmt("%").a[ISize](-10).string())
+      Sform("%").a[ISize](-10).string())
 
     h.assert_eq[String]("1.1",
-      Fmt("%").a[F32](1.1).string())
+      Sform("%").a[F32](1.1).string())
 
 class iso _TestEscape is UnitTest
-  fun name(): String => "fmt/escape"
+  fun name(): String => "sform/escape"
 
   fun apply(h: TestHelper) =>
     h.assert_eq[String](
       "The first % is ignored, the second is replaced",
-      Fmt("The first %% is ignored, the second %")("is replaced").string())
+      Sform("The first %% is ignored, the second %")("is replaced").string())

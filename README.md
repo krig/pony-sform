@@ -1,4 +1,4 @@
-# pony-fmt
+# pony-sform
 
 An alternative string format library for pony.
 
@@ -10,7 +10,7 @@ formatting I recommend using the builtin `format` library.
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/krig/pony-fmt.svg?style=svg)](https://circleci.com/gh/krig/pony-fmt)
+[![CircleCI](https://circleci.com/gh/krig/pony-sform.svg?style=svg)](https://circleci.com/gh/krig/pony-sform)
 
 Note that the code currently doesn't check that the number of
 values passed in actually match the number of formatting marks in the
@@ -22,24 +22,24 @@ used.
 
 ``` pony
 
-use "fmt"
+use "sform"
 
 actor Main
   new create(env: Env) =>
-    Fmt("listening on %:%")("localhost")("80").print(env.out)
-    let str = Fmt("a formatted %")("string").string()
+    Sform("listening on %:%")("localhost")("80").print(env.out)
+    let str = Sform("a formatted %")("string").string()
 
 ```
 
 ### Formatting literals
 
 Literal numbers are ambiguous types and can't be passed directly to
-the `Fmt.apply` method. Therefore, they need to be typed. This can
+the `Sform.apply` method. Therefore, they need to be typed. This can
 either be done by explicitly casting them as so: `F32(2.4)`, or by
 using the `a` method:
 
 ``` pony
-Fmt("Formatting %, a number").a[F32](2.4).string()
+Sform("Formatting %, a number").a[F32](2.4).string()
 ```
 
 ### Escaping percent characters
@@ -47,7 +47,7 @@ Fmt("Formatting %, a number").a[F32](2.4).string()
 To print a `%` character, double it up:
 
 ```
-Fmt("The first %% is ignored, the second %")("is replaced").string()
+Sform("The first %% is ignored, the second %")("is replaced").string()
 ```
 
 ## Installation
@@ -58,10 +58,10 @@ Fmt("The first %% is ignored, the second %")("is replaced").string()
 ```json
 { 
   "type": "github",
-  "repo": "krig/pony-fmt"
+  "repo": "krig/pony-sform"
 }
 ```
 
 * `stable fetch` to fetch your dependencies
-* `use "fmt"` to include this package
+* `use "sform"` to include this package
 * `stable env ponyc` to compile your application

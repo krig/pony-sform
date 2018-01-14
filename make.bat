@@ -1,5 +1,5 @@
 @echo off
-set TARGET=fmt
+set TARGET=sform
 
 if "%1"=="help" goto usage
 if "%1"=="--help" goto usage

@@ -1,11 +1,11 @@
-build/fmt: build fmt/*.pony
-	ponyc fmt -o build --debug
+build/sform: build sform/*.pony
+	ponyc sform -o build --debug
 
 build:
 	mkdir build
 
-test: build/fmt
-	build/fmt
+test: build/sform
+	build/sform
 
 clean:
 	rm -rf build
