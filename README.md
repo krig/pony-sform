@@ -26,8 +26,10 @@ use "sform"
 
 actor Main
   new create(env: Env) =>
-    Sform("listening on %:%")("localhost")("80").print(env.out)
-    let str = Sform("a formatted %")("string").string()
+    let name = "alice"
+    let when: U64 = 2018
+    env.out.print(Sform("% (%) says: %")(name)(when)("Hello, world!").string())
+    let str = Sform("a % %")("formatted")("string").string()
 
 ```
 
